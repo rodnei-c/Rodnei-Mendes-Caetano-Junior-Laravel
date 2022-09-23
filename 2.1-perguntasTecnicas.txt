@@ -1,0 +1,41 @@
+2.1.1 O que são as rotas?
+As rotas são os caminhos que um "pedido" vai fazer para executar alguma ação.
+ 
+2.1.2 O que são os controllers?
+Os Controllers são responsáveis por controlar os caminhos entre as camadas,
+ele controla qual model deve ser executada e em qual view ela será mostrada,
+controlando o caminho pelo qual o usuário interage com a aplicação.
+
+2.1.3 O que são os models?
+É a camada na qual é responsável pelo gerenciamento de dados, recebe os dados pelos controladores
+e os envia até a view.
+
+2.1.4 O que é MVC?
+É um padrão de design que divide a aplicação em camadas, View, que é a interface do usuário,
+Model, que gerencia os dados recebidos e os envia de volta, e o Controller que faz a ponte entre o Model e a View.
+Este padrão de design utiliza  do principio da responsabilidade única, onde cada diretório, classe e etc tem seu
+próprio objetivo.
+
+2.1.5 Como podemos gerar rotas automática com Laravel?
+Utilizando a linha "Route::get('/posts/{id}', function{}".
+
+2.1.6 Explique o que é o Blade e quais as principais diretivas (cite no mínimo 3).
+O Blade é um template engine do Laravel que são compiladas em um código PHP,
+no qual deixa a aplicação mais leve.
+Das principais diretivas do Blade, temos as declarações de If, declarações de switch,
+repetições, variáveis de repetições e diretivas de condicionais.
+
+2.1.7 Explique detalhadamente o que é um guard.
+Define como as informações do usuário deve ser armazenada e como ele deve ser
+autenticado, por exemplo o guard armazena dados das sessões de usuário.
+
+2.1.8 Qual a principal função do composer em um projeto Laravel?
+Criar o projeto em laravel.
+
+2.1.9 Qual a principal função do Artisan em um projeto Laravel?
+Realizar alguns comandos para facilitar o desenvolvimento do projeto Laravel.
+Por exemplo o comando "php artisan make:controller exemploController" que
+automaticamente cria um controller ou o "php artisan serve" que inicializa o servidor.
+
+2.1.10 Como funciona o Auth do Laravel?
+Verificar a autenticação do usuário.
