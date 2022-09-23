@@ -11,25 +11,20 @@ use App\Models\User;
 
 class CommentController extends Controller
 {
-    public function create(Request $request)
+    public function store(Request $request, Post $post)
     {
-        $comments = new Comment;
-        $comments->comment = $request->comment;
-        $comments->post_id = $request->id;
-        $comments->user_id = $request->id;
-        $comments->save();
+        $validated = $request->validate([
+            'comment' => 'required'
+        ]);
 
-        $post = Post::findOrFail($id);
-        $postOwner = User::where('id', $post->user_id)->first()->toArray();
+        $created = Comment::create([
+            'comment' => $validated['comment'],
+            'user_id' => auth()->user()->id,
+            'post_id' => $post->id
+        ]);
 
-        $text = Comment::all();
-        return view(
-            'posts.show',
-            [
-                'post' => $post,
-                'postOwner' => $postOwner,
-                'comments' => $comments
-            ]
-        );
+        dd($created);
+
     }
+
 }

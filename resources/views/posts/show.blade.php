@@ -25,7 +25,7 @@
             @auth
                 <div class="form-group">
                 {{ $errors->first('comment') }}
-                    <form action="/comments" method="POST">
+                    <form action="{{route('comment'),$post->id}}" method="POST">
                         @csrf
                         <!--<input type="hidden" name="post_id" value="{{$post->id}}">-->
                         <textarea type="text" class="form-control" placeholder="Escrever um novo comentário" name="content" id="content"></textarea>
